@@ -1,0 +1,297 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ShopEase - Your Online Store</title>
+<style>
+  /* Reset & base */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f9f9f9;
+    color: #333;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* Header */
+  header {
+    background: #2a9d8f;
+    color: #fff;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  header h1 {
+    font-weight: 700;
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+  nav {
+    display: flex;
+    gap: 20px;
+  }
+  nav a {
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+  }
+  nav a:hover {
+    background-color: #1f7a6f;
+  }
+
+  /* Hero Section */
+  .hero {
+    background-image: url('https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+    position: relative;
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(42,157,143,0.65);
+    z-index: 0;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .hero h2 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+  }
+  .hero p {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+  }
+  .hero button {
+    background: #e76f51;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .hero button:hover {
+    background: #d65a3a;
+  }
+
+  /* Products Section */
+  .products {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  .products h3 {
+    text-align: center;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #264653;
+  }
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(260px, 1fr));
+    gap: 30px;
+  }
+  .product-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgb(0 0 0 / 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease;
+  }
+  .product-card:hover {
+    transform: translateY(-6px);
+  }
+  .product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  .product-details {
+    flex-grow: 1;
+    padding: 18px 20px 30px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .product-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #2a9d8f;
+  }
+  .product-description {
+    flex-grow: 1;
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 18px;
+  }
+  .product-price {
+    font-size: 1.1rem;
+    color: #e76f51;
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+  .add-to-cart-btn {
+    background-color: #2a9d8f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .add-to-cart-btn:hover {
+    background-color: #21706a;
+  }
+
+  /* Footer */
+  footer {
+    background: #264653;
+    color: #ccc;
+    text-align: center;
+    padding: 25px 20px;
+    margin-top: 40px;
+  }
+  footer p {
+    margin: 0;
+    font-size: 0.95rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    header {
+      justify-content: center;
+      gap: 10px;
+    }
+    nav {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>ShopEase</h1>
+  <nav>
+    <a href="#products">Products</a>
+    <a href="#about">About Us</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h2>Discover Amazing Deals</h2>
+    <p>Shop the latest and greatest products all in one place. Quality guaranteed.</p>
+    <button onclick="window.location.href='#products'">Shop Now</button>
+  </div>
+</section>
+
+<section id="products" class="products">
+  <h3>Featured Products</h3>
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80" alt="Running Shoes" class="product-image" />
+      <div class="product-details">
+        <div>
+          <h4 class="product-title">Wireless Headphones</h4>
+          <p class="product-description">Experience crystal-clear sound and all-day comfort with our wireless headphones.</p>
+          <div class="product-price">$59.99</div>
+        </div>
+        <button class="add-to-cart-btn" onclick="addToCart('Wireless Headphones')">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=600&q=80" alt="Classic Watch" class="product-image" />
+      <div class="product-details">
+        <div>
+          <h4 class="product-title">Classic Watch</h4>
+          <p class="product-description">Elevate your style with this timeless classic watch, perfect for any occasion.</p>
+          <div class="product-price">$120.00</div>
+        </div>
+        <button class="add-to-cart-btn" onclick="addToCart('Classic Watch')">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="cp.jpg">
+      <div class="product-details">
+        <div>
+          <h4 class="product-title">Smartphone</h4>
+          <p class="product-description">Stay connected with the latest technology and sleek design in this smartphone.</p>
+          <div class="product-price">$699.99</div>
+        </div>
+        <button class="add-to-cart-btn" onclick="addToCart('Smartphone')">Add to Cart</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="shoes.jpg">
+  <div class="product-details">
+    <div>
+      <h4 class="product-title">Running Shoes</h4>
+      <p class="product-description">Move faster and feel comfortable with these lightweight running shoes.</p>
+      <div class="product-price">$85.50</div>
+    </div>
+    <button class="add-to-cart-btn" onclick="addToCart('Running Shoes')">Add to Cart</button>
+  </div>
+</div>
+
+
+  </div>
+</section>
+
+<section id="about" class="products" style="margin-top: 70px;">
+  <h3>About ShopEase</h3>
+  <p style="max-width: 700px; margin: 0 auto 40px auto; font-size: 1.1rem; color:#555; line-height: 1.5;">
+    ShopEase is your one-stop online shop for quality products at unbeatable prices. Our mission is to provide an effortless shopping experience with excellent customer service and reliable shipping worldwide.
+  </p>
+</section>
+
+<section id="contact" class="products" style="margin-top: 70px; margin-bottom: 50px;">
+  <h3>Contact Us</h3>
+  <p style="max-width: 700px; margin: 0 auto 15px auto; font-size: 1rem; color:#555; line-height: 1.5;">
+    Have questions? Reach out to us anytime at <a href="mailto:support@shopease.com" style="color:#2a9d8f; font-weight: 700;">support@shopease.com</a> or call us at <strong>(800) 123-4567</strong>.
+  </p>
+</section>
+
+<footer>
+  <p>© 2024 ShopEase. All rights reserved.</p>
+</footer>
+
+<script>
+  function addToCart(productName) {
+    alert(productName + ' has been added to your cart!');
+  }
+</script>
+</body>
+</html>
+
+```
